@@ -18,6 +18,7 @@ FILE *in_fp, *fopen();
 
 /* Function declarations */ 
 void addChar();
+void error();
 void expr();
 void factor();
 void getChar();
@@ -245,3 +246,12 @@ void factor() {
   printf("Exit <factor>\n");;
 }
 /* End of function factor */
+
+/* error
+Prints an error statement if the language cannot
+be parsed
+*/
+void error() {
+  printf("ERROR! Can't parse the syntax");
+}
+/*End of function error */
