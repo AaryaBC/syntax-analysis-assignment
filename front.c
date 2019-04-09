@@ -18,9 +18,12 @@ FILE *in_fp, *fopen();
 
 /* Function declarations */ 
 void addChar();
+void expr();
+void factor();
 void getChar();
 void getNonBlank();
 int lex();
+void term();
 
 /* Character classes */
 #define LETTER 0
