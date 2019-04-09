@@ -3,6 +3,7 @@
 /* front.c - a lexical analyzer system for simple arithmetic expressions */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 /* Global declarations */ 
@@ -42,12 +43,15 @@ void term();
 #define LEFT_PAREN 25
 #define RIGHT_PAREN 26
 
+/* Manually added token codes */
+#define NEW_LINE 999
+
 /******************************************************/
 /* main driver */
-main() {
+int main(int argc, char *argv[]) {
 /* Open the input data file and process its contents */ 
-  if ((in_fp = fopen("front.in", "r")) == NULL)
-    printf("ERROR - cannot open front.in \n"); 
+  if ((in_fp = fopen(argv[1], "r")) == NULL)
+    printf("ERROR - cannot open %s \n", argv[1]); 
   else {
     getChar(); 
     do {
@@ -252,6 +256,6 @@ Prints an error statement if the language cannot
 be parsed
 */
 void error() {
-  printf("ERROR! Can't parse the syntax");
+  printf("Error");
 }
 /*End of function error */
